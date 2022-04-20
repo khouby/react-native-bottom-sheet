@@ -40,6 +40,10 @@ export interface BottomSheetDefaultBackdropProps
    */
   pressBehavior?: BackdropPressBehavior;
   /**
+   * Callback when user press backdrop
+   */
+   onPress?: () => void;
+  /**
    * Child component that will be rendered on backdrop.
    */
   children?: React.ReactNode | React.ReactNode[];

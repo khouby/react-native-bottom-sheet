@@ -1126,6 +1126,7 @@ const BottomSheetComponent = forwardRef<BottomSheet, BottomSheetProps>(
       () => ({
         animatedIndex,
         animatedPosition,
+        animatedSheetState,
         snapToIndex: handleSnapToIndex,
         snapToPosition: handleSnapToPosition,
         expand: handleExpand,
@@ -1136,6 +1137,7 @@ const BottomSheetComponent = forwardRef<BottomSheet, BottomSheetProps>(
       [
         animatedIndex,
         animatedPosition,
+        animatedSheetState,
         handleSnapToIndex,
         handleSnapToPosition,
         handleExpand,

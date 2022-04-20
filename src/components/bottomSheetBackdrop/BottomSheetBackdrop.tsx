@@ -30,6 +30,7 @@ const BottomSheetBackdropComponent = ({
   enableTouchThrough = DEFAULT_ENABLE_TOUCH_THROUGH,
   pressBehavior = DEFAULT_PRESS_BEHAVIOR,
   style,
+  onPress,
   children,
 }: BottomSheetDefaultBackdropProps) => {
   //#region hooks
@@ -43,6 +44,8 @@ const BottomSheetBackdropComponent = ({
 
   //#region callbacks
   const handleOnPress = useCallback(() => {
+    onPress?.();
+
     if (pressBehavior === 'close') {
       close();
     } else if (pressBehavior === 'collapse') {
@@ -50,7 +53,7 @@ const BottomSheetBackdropComponent = ({
     } else if (typeof pressBehavior === 'number') {
       snapToIndex(pressBehavior);
     }
-  }, [snapToIndex, close, disappearsOnIndex, pressBehavior]);
+  }, [onPress, snapToIndex, close, disappearsOnIndex, pressBehavior]);
   const handleContainerTouchability = useCallback(
     (shouldDisableTouchability: boolean) => {
       if (!containerRef.current) {

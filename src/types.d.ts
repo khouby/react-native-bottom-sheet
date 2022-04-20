@@ -10,7 +10,7 @@ import type {
   PanGestureHandlerEventPayload,
 } from 'react-native-gesture-handler';
 import type Animated from 'react-native-reanimated';
-import type { GESTURE_SOURCE } from './constants';
+import type { GESTURE_SOURCE, SHEET_STATE, } from './constants';
 
 //#region Methods
 export interface BottomSheetMethods {
@@ -108,6 +108,11 @@ export interface BottomSheetVariables {
    * @type Animated.Value<number>
    */
   animatedPosition: Animated.SharedValue<number>;
+  /**
+   * Current sheet state
+   * @type Animated.Value<SHEET_STATE>
+   */
+  animatedSheetState: Animated.SharedValue<SHEET_STATE>;
 }
 
 //#region scrollables
