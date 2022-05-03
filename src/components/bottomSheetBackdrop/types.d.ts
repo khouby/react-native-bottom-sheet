@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import type { ViewProps } from 'react-native';
 import type { BottomSheetVariables } from '../../types';
 
@@ -42,9 +43,9 @@ export interface BottomSheetDefaultBackdropProps
   /**
    * Callback when user press backdrop
    */
-   onPress?: () => void;
+  onPress?: () => void;
   /**
    * Child component that will be rendered on backdrop.
    */
-  children?: React.ReactNode | React.ReactNode[];
+  children?: ReactNode | ReactNode[];
 }
