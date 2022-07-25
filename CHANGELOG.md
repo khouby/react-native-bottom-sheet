@@ -1,6 +1,50 @@
 # Changelog
 
-## [v4.2.2](https://github.com/gorhom/react-native-bottom-sheet/compare/v4.2.1...v4.2.2)
+## [v4.4.2](https://github.com/gorhom/react-native-bottom-sheet/compare/v4.4.0...v4.4.2)
+
+#### Improvements
+
+- chore: export internal hook and type ([a3ae54d](https://github.com/gorhom/react-native-bottom-sheet/commit/a3ae54dcf7079e88979057f2e19a7813082e798d)).
+- chore: updated release script ([a0b64b7](https://github.com/gorhom/react-native-bottom-sheet/commit/a0b64b7f3da9c6dc811a068fc839efd653c74c16)).
+
+## [v4.4.0](https://github.com/gorhom/react-native-bottom-sheet/compare/v4.3.2...v4.4.0) - 2022-07-09
+
+#### Features
+
+- feat: allow scrollable events ([`#1019`](https://github.com/gorhom/react-native-bottom-sheet/pull/1019)).
+
+#### Improvements
+
+- chore: updated git actions ([bd0a9de](https://github.com/gorhom/react-native-bottom-sheet/commit/bd0a9de4af48b7babbf524a1b6fc1e799441b207)).
+- chore: export internal hooks ([603ac94](https://github.com/gorhom/react-native-bottom-sheet/commit/603ac9420a6958a9dfc54975576ed19f306a89e7)).
+
+## [v4.3.2](https://github.com/gorhom/react-native-bottom-sheet/compare/v4.3.1...v4.3.2) - 2022-06-13
+
+## [v4.3.1](https://github.com/gorhom/react-native-bottom-sheet/compare/v4.3.0...v4.3.1) - 2022-05-24
+
+#### Improvements
+
+- chore: added Expo example  ([`#958`](https://github.com/gorhom/react-native-bottom-sheet/pull/958)).
+- refactor: allow passing style to the container ([5e1ed9d](https://github.com/gorhom/react-native-bottom-sheet/commit/5e1ed9da98913d47b27912f49cf7e12b2393176e)).
+- chore: fixed dynamic snap point example text color ([321de77](https://github.com/gorhom/react-native-bottom-sheet/commit/321de777cb848c85a85ac6107ddc26bef1845566)).
+
+#### Fixes
+
+- fix: removed flex style from draggable view ([29152fb](https://github.com/gorhom/react-native-bottom-sheet/commit/29152fb65672a07ff91249a882f0fc0f3d9b796c)).
+- fix: added a fixed position for the container on web ([ce5115a](https://github.com/gorhom/react-native-bottom-sheet/commit/ce5115a2abd2ddc7140eb3037274b2c5bb3ff10a)).
+
+## [v4.3.0](https://github.com/gorhom/react-native-bottom-sheet/compare/v4.2.2...v4.3.0) - 2022-05-14
+
+#### Features
+
+- feat: added data to present modal api ([`#942`](https://github.com/gorhom/react-native-bottom-sheet/pull/942)).
+
+#### Improvements
+
+- refactor: expose animateOnMount for modals ([`#943`](https://github.com/gorhom/react-native-bottom-sheet/pull/943)).
+- refactor: added jest mock file ([`#941`](https://github.com/gorhom/react-native-bottom-sheet/pull/941)).
+
+## [v4.2.2](https://github.com/gorhom/react-native-bottom-sheet/compare/v4.2.1...v4.2.2) - 2022-05-02
 
 #### Fixes
 

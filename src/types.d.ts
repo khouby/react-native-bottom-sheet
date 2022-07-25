@@ -4,6 +4,7 @@ import type {
   ScrollView,
   SectionList,
   NativeScrollEvent,
+  NativeSyntheticEvent,
 } from 'react-native';
 import type {
   GestureEventPayload,
@@ -78,8 +79,9 @@ export interface BottomSheetMethods {
 export interface BottomSheetModalMethods extends BottomSheetMethods {
   /**
    * Mount and present the bottom sheet modal to the initial snap point.
+   * @param data to be passed to the modal.
    */
-  present: () => void;
+  present: (data?: any) => void;
   /**
    * Close and unmount the bottom sheet modal.
    * @param animationConfigs snap animation configs.
@@ -110,6 +112,9 @@ export type ScrollableRef = {
   id: number;
   node: React.RefObject<Scrollable>;
 };
+export type ScrollableEvent = (
+  event: Pick<NativeSyntheticEvent<NativeScrollEvent>, 'nativeEvent'>
+) => void;
 //#endregion
 
 //#region utils

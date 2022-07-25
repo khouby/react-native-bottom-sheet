@@ -1,6 +1,6 @@
 {
   "name": "@gorhom/bottom-sheet",
-  "version": "4.2.2",
+  "version": "4.4.2",
   "description": "A performant interactive bottom sheet with fully configurable options 🚀",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -8,7 +8,8 @@
   "react-native": "src/index.ts",
   "files": [
     "src",
-    "lib"
+    "lib",
+    "mock.js"
   ],
   "keywords": [
     "react-native",
@@ -34,7 +35,7 @@
     "copy-dts": "copyfiles -u 1 \"src/**/*.d.ts\" lib/typescript",
     "delete-debug-view": "rm -r ./lib/commonjs/components/bottomSheetDebugView && rm -r ./lib/module/components/bottomSheetDebugView && rm -r ./lib/typescript/components/bottomSheetDebugView",
     "delete-dts.js": "find ./lib/commonjs -name '*.d.js*' -delete && find ./lib/module -name '*.d.js*' -delete",
-    "release": "release-it",
+    "release": "rm -rf lib && yarn build && release-it",
     "example": "yarn --cwd example",
     "bootstrap": "yarn install && yarn example"
   },
@@ -50,8 +51,8 @@
     "@react-native-community/eslint-config": "^3.0.0",
     "@release-it/conventional-changelog": "^2.0.1",
     "@types/invariant": "^2.2.34",
-    "@types/react": "^17.0.5",
-    "@types/react-native": "^0.64.5",
+    "@types/react": "17.0.2",
+    "@types/react-native": "^0.67.7",
     "auto-changelog": "^2.3.0",
     "copyfiles": "^2.4.1",
     "eslint": "^7.32.0",

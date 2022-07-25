@@ -13,6 +13,11 @@ export { useBottomSheetTimingConfigs } from './hooks/useBottomSheetTimingConfigs
 export { useBottomSheetInternal } from './hooks/useBottomSheetInternal';
 export { useBottomSheetModalInternal } from './hooks/useBottomSheetModalInternal';
 export { useBottomSheetDynamicSnapPoints } from './hooks/useBottomSheetDynamicSnapPoints';
+export { useScrollEventsHandlersDefault } from './hooks/useScrollEventsHandlersDefault';
+export { useGestureEventsHandlersDefault } from './hooks/useGestureEventsHandlersDefault';
+export { useBottomSheetGestureHandlers } from './hooks/useBottomSheetGestureHandlers';
+export { useScrollHandler } from './hooks/useScrollHandler';
+export { useScrollableSetter } from './hooks/useScrollableSetter';
 //#endregion
 
 //#region components
@@ -37,6 +42,8 @@ export const {
   TouchableOpacity,
   TouchableWithoutFeedback,
 } = BottomSheetTouchable;
+// utils
+export { createBottomSheetScrollableComponent } from './components/bottomSheetScrollable';
 //#endregion
 
 //#region types
@@ -52,6 +59,7 @@ export type {
   BottomSheetScrollViewMethods,
   BottomSheetSectionListMethods,
   BottomSheetVirtualizedListMethods,
+  BottomSheetScrollableProps,
 } from './components/bottomSheetScrollable';
 
 export type {
