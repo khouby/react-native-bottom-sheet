@@ -1,4 +1,5 @@
-import React, { memo, useCallback, useMemo, useRef } from 'react';
+import React, { memo, useCallback, useMemo, useState } from 'react';
+import { ViewProps } from 'react-native';
 import Animated, {
   interpolate,
   Extrapolate,
@@ -29,6 +30,7 @@ const BottomSheetBackdropComponent = ({
   disappearsOnIndex: _providedDisappearsOnIndex,
   enableTouchThrough: _providedEnableTouchThrough,
   pressBehavior = DEFAULT_PRESS_BEHAVIOR,
+  onPress,
   style,
   onPress,
   children,
@@ -47,8 +49,9 @@ const BottomSheetBackdropComponent = ({
   //#endregion
 
   //#region variables
-  const containerRef = useRef<Animated.View>(null);
-  const pointerEvents = enableTouchThrough ? 'none' : 'auto';
+  const [pointerEvents, setPointerEvents] = useState<
+    ViewProps['pointerEvents']
+  >(enableTouchThrough ? 'none' : 'auto');
   //#endregion
 
   //#region callbacks
@@ -62,16 +65,10 @@ const BottomSheetBackdropComponent = ({
     } else if (typeof pressBehavior === 'number') {
       snapToIndex(pressBehavior);
     }
-  }, [onPress, snapToIndex, close, disappearsOnIndex, pressBehavior]);
+  }, [snapToIndex, close, disappearsOnIndex, pressBehavior, onPress]);
   const handleContainerTouchability = useCallback(
     (shouldDisableTouchability: boolean) => {
-      if (!containerRef.current) {
-        return;
-      }
-      // @ts-ignore
-      containerRef.current.setNativeProps({
-        pointerEvents: shouldDisableTouchability ? 'none' : 'auto',
-      });
+      setPointerEvents(shouldDisableTouchability ? 'none' : 'auto');
     },
     []
   );
@@ -121,8 +118,8 @@ const BottomSheetBackdropComponent = ({
   return pressBehavior !== 'none' ? (
     <TapGestureHandler onGestureEvent={gestureHandler}>
       <Animated.View
-        ref={containerRef}
         style={containerStyle}
+        pointerEvents={pointerEvents}
         accessible={true}
         accessibilityRole="button"
         accessibilityLabel="Bottom Sheet backdrop"
@@ -134,11 +131,7 @@ const BottomSheetBackdropComponent = ({
       </Animated.View>
     </TapGestureHandler>
   ) : (
-    <Animated.View
-      ref={containerRef}
-      pointerEvents={pointerEvents}
-      style={containerStyle}
-    >
+    <Animated.View pointerEvents={pointerEvents} style={containerStyle}>
       {children}
     </Animated.View>
   );
