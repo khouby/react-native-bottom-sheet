@@ -30,7 +30,6 @@ const BottomSheetBackdropComponent = ({
   disappearsOnIndex: _providedDisappearsOnIndex,
   enableTouchThrough: _providedEnableTouchThrough,
   pressBehavior = DEFAULT_PRESS_BEHAVIOR,
-  onPress,
   style,
   onPress,
   children,
